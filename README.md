@@ -18,13 +18,32 @@ Password: Password@123
 Steps to follow:
 select services->Database->RDS->Databases(on left hand side)->dbinstance-1-> Go to Actions dropdown->Select start
 
-MongoDB Connection string: mongodb+srv://DAPProject:Password@dap-cluster.pjiax.mongodb.net/DAP_PROJECT?retryWrites=true&w=majority
+MongoDB Connection details:
+Dataset1
+Connection string: mongodb+srv://DAPProject:Password@dap-cluster.pjiax.mongodb.net/DAP_PROJECT?retryWrites=true&w=majority
 User: 'DAPProject'
 Password: 'Password'
 Database : 'DAP_PROJECT'
 If propmpted for ssl please use this string:
 client = MongoClient("mongodb+srv://DAPProject:Password@dap-cluster.pjiax.mongodb.net/DAP_PROJECT?retryWrites=true&w=majority",ssl_cert_reqs=ssl.CERT_NONE)
 
+Dataset2
+Connection string: mongodb+srv://admin:Password@cluster0.iqygh.mongodb.net/COVID?retryWrites=true&w=majority
+User: 'admin'
+Password: 'Password'
+Database : 'COVID'
+If propmpted for ssl please use this string:
+client = MongoClient("mongodb+srv://admin:Password@cluster0.iqygh.mongodb.net/COVID?retryWrites=true&w=majority",ssl_cert_reqs=ssl.CERT_NONE)
+  
+Dataset3
+Connection string: mongodb+srv://DAP_PROJECT:Password@dapproject.hqeyg.mongodb.net/DAP?retryWrites=true&w=majority
+User: 'DAP_PROJECT'
+Password: 'Password'
+Database : 'DAP'
+If propmpted for ssl please use this string:
+client = MongoClient("mongodb+srv://DAP_PROJECT:Password@dapproject.hqeyg.mongodb.net/DAP?retryWrites=true&w=majority",ssl_cert_reqs=ssl.CERT_NONE)
+
+As we have space limit in MongoDB Atlas, we have created 3 different clusters because we are working with live data whose size keeps on increasing after every update. 
 
 PostgreSQL Connection String: 'postgresql://group_dap123:oYeUKU9ISHQ8@dbinstance-1.c0lqrz3efg7l.eu-west-1.rds.amazonaws.com:5432/DAP'
 database='DAP'
@@ -33,8 +52,8 @@ password='oYeUKU9ISHQ8'
 host='dbinstance-1.c0lqrz3efg7l.eu-west-1.rds.amazonaws.com'
 port='5432'
 
-Dataset 1:
-The scrapped file from Github has been uploaded in MongoDB. I have then commented out the part of code which is used for uploading the file in MongoDB. 
+Dataset 1 & 3:
+The scrapped files from Github have been uploaded in MongoDB. We have then commented out the part of code which is used for uploading the files in MongoDB. 
 This has been done to avoid the space issues in database which could arise if the volume of data present in github increases in future.
 
 
